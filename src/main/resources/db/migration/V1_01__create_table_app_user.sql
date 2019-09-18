@@ -1,0 +1,16 @@
+CREATE TABLE app_user (
+  app_user_id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  username VARCHAR(20) NOT NULL,
+  password VARCHAR(20) NOT NULL,
+  name VARCHAR(100) NOT NULL,
+  app_user_role VARCHAR(50) NOT NULL,
+  active BOOLEAN NOT NULL DEFAULT TRUE,
+  notes TEXT DEFAULT NULL,
+  created_by BIGINT DEFAULT NULL,
+  created_at DATETIME NOT NULL,
+  updated_by BIGINT DEFAULT NULL,
+  updated_at DATETIME DEFAULT NULL,
+  version BIGINT DEFAULT 0,
+  PRIMARY KEY (app_user_id),
+  UNIQUE KEY (username)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

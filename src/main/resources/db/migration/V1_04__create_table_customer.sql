@@ -1,0 +1,33 @@
+CREATE TABLE customer (
+  customer_id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  company_name VARCHAR(100) NOT NULL,
+  category_id BIGINT UNSIGNED NOT NULL,
+  contact_title VARCHAR(50) DEFAULT NULL,
+  contact_first_name VARCHAR(100) DEFAULT NULL,
+  contact_last_name VARCHAR(100) DEFAULT NULL,
+  address TEXT DEFAULT NULL,
+  city VARCHAR(100) DEFAULT NULL,
+  region VARCHAR(100) DEFAULT NULL,
+  postal_code VARCHAR(50) DEFAULT NULL,
+  country_id BIGINT UNSIGNED DEFAULT NULL,
+  phone VARCHAR(100) DEFAULT NULL,
+  fax VARCHAR(100) DEFAULT NULL,
+  mobile VARCHAR(100) DEFAULT NULL,
+  email VARCHAR(100) DEFAULT NULL,
+  homepage VARCHAR(100) DEFAULT NULL,
+  skype VARCHAR(100) DEFAULT NULL,
+  active BOOLEAN NOT NULL DEFAULT TRUE,
+  notes TEXT DEFAULT NULL,
+  created_by BIGINT DEFAULT NULL,
+  created_at DATETIME NOT NULL,
+  updated_by BIGINT DEFAULT NULL,
+  updated_at DATETIME DEFAULT NULL,
+  version BIGINT DEFAULT 0,
+  PRIMARY KEY (customer_id),
+  KEY idx_fk_category_id (category_id),
+  CONSTRAINT fk_customer_category FOREIGN KEY (category_id) REFERENCES category (category_id)
+    ON DELETE RESTRICT ON UPDATE CASCADE,
+  KEY idx_fk_country_id (country_id),
+  CONSTRAINT fk_customer_country FOREIGN KEY (country_id) REFERENCES country (country_id)
+    ON DELETE RESTRICT ON UPDATE CASCADE
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

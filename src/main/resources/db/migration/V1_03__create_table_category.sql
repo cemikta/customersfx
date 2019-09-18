@@ -1,0 +1,12 @@
+CREATE TABLE category (
+  category_id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(50) NOT NULL,
+  notes TEXT DEFAULT NULL,
+  created_by BIGINT DEFAULT NULL,
+  created_at DATETIME NOT NULL,
+  updated_by BIGINT DEFAULT NULL,
+  updated_at DATETIME DEFAULT NULL,
+  version BIGINT DEFAULT 0,
+  PRIMARY KEY (category_id),
+  UNIQUE KEY (name)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

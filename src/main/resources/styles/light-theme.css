@@ -1,0 +1,636 @@
+/*
+ * Copyright (C) 2017 Cem Ikta
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
+ *
+ */
+
+/*
+ * CustomersFX Light Theme
+ */
+
+/*******************************************************************************
+ *                                                                             *
+ * Icomoon Font                                                                *
+ *                                                                             *
+ ******************************************************************************/
+
+@font-face {
+    src: url("../fonts/icomoon/icomoon.ttf");
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Root                                                                        *
+ *                                                                             *
+ ******************************************************************************/
+
+.root {
+    -fx-base: #fbfbfb;
+    -fx-accent: #cee6f6;
+    -fx-focus-color: #66afe9;
+    -fx-faint-focus-color: #66afe922;
+    -fx-default-button: #8ac4fe;
+
+    /* Splash Colors */
+    SPLASH_COLOR: #2095F2;
+    SPLASH_BG: #ffffff;
+
+    /* RibbonPane Colors */
+    RIBBON_BASE: #e9e9e9;
+    RIBBON_BRIGHT: -fx-base;
+    RIBBON_BORDER: #c9c9c9;
+    RIBBON_TAB_HOVER_BG: #e1e1e1;
+    RIBBON_TAB_LABEL: #333333;
+    RIBBON_SELECTED_TAB_LABEL: #3a6ea8;
+    RIBBON_COMMAND_TEXT: #6d6d6d;
+    RIBBON_COMMAND_SELECTED: -fx-accent;
+    RIBBON_COMMAND_SELECTED_TEXT: RIBBON_COMMAND_TEXT;
+
+    /* StatusBar Colors */
+    STATUS_BAR_BG: RIBBON_BASE;
+    STATUS_BAR_BORDER: RIBBON_BORDER;
+
+    /* Page Colors */
+    PAGE_HEADER_BORDER: RIBBON_BORDER;
+    PAGE_HEADER_BG: #f9f9f9;
+    PAGE_CENTER_BG: #ffffff;
+
+    /* ButtonBarPane Colors */
+    BUTTON_BAR_PANE_TOOLBAR: #e9e9e9;
+    BUTTON_BAR_PANE_BORDER: RIBBON_BORDER;
+    BUTTON_BAR_PANE_TEXT: #333333;
+    BUTTON_BAR_PANE_SELECTED: #c5c5c5;
+
+    /* TipOfTheDay Colors */
+    TIP_OF_THE_DAY_BORDER: RIBBON_BORDER;
+
+    /* Shortcut Box Colors */
+    SHORTCUT_KEY_BG: RIBBON_BASE;
+
+    /* HyperLink Colors */
+    HYPERLINK_COLOR: RIBBON_SELECTED_TAB_LABEL;
+
+    /* Tooltip Colors */
+    TOOLTIP_BG: RIBBON_BRIGHT;
+    TOOLTIP_COLOR: RIBBON_COMMAND_TEXT;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Font Icons                                                                  *
+ *                                                                             *
+ ******************************************************************************/
+
+.font-icon {
+    -fx-font-family: icomoon;
+    -fx-fill: #000000;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * App View                                                                    *
+ *                                                                             *
+ ******************************************************************************/
+
+.app-view {
+    -fx-background-color: RIBBON_BASE;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Login View                                                                  *
+ *                                                                             *
+ ******************************************************************************/
+
+.login-view {
+    -fx-background-image: url("../images/bg.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+}
+
+.login-box {
+    -fx-min-width: 785px;
+    -fx-pref-width: 785px;
+    -fx-max-width: 785px;
+    -fx-min-height: 450px;
+    -fx-pref-height: 450px;
+    -fx-max-height: 450px;
+}
+
+.login-box > .info {
+    -fx-background-color: rgba(255, 255, 255, 0.5);
+    -fx-min-width: 465px;
+    -fx-pref-width: 465px;
+    -fx-max-width: 465px;
+    -fx-border-radius: 5 0 0 5 ;
+    -fx-background-radius: 5 0 0 5;
+    -fx-padding: 28px;
+    -fx-alignment: top-center;
+}
+.login-box > .info > .info-app-icon {
+    -fx-pref-width: 150px;
+    -fx-pref-height: 150px;
+    -fx-alignment: center;
+    -fx-border-width: 2 2 2 2;
+    -fx-border-style: solid;
+    -fx-border-radius: 100;
+    -fx-border-color: #ffffff;
+}
+
+.login-box > .info > .info-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 36px;
+    -fx-label-padding: 10 0 0 0;
+}
+
+.login-box > .form {
+    -fx-background-color: #ffffff;
+    -fx-min-width: 320px;
+    -fx-pref-width: 320px;
+    -fx-max-width: 320px;
+    -fx-border-radius: 0 5 5 0;
+    -fx-background-radius: 0 5 5 0;
+    -fx-padding: 28px;
+    -fx-hgap: 20;
+    -fx-vgap: 25;
+}
+
+.login-box > .form > .form-title {
+    -fx-text-fill: #000000;
+    -fx-font-size: 28px;
+    -fx-label-padding: 20 0 14 0;
+}
+
+.login-box > .form > .text-field,
+.login-box > .form > .password-field {
+    -fx-pref-width: 260px;
+}
+
+.login-box > .form > .text-field,
+.login-box > .form > .password-field,
+.login-box > .form > .hyperlink,
+.login-box > .form > .button {
+    -fx-font-size: 14px;
+    -fx-pref-height: 37px;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Page View, Data Page View                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.page-view > .page-header {
+    -fx-background-insets: 0, 0 0 1 0;
+}
+
+.page-view > .page-header,
+.data-page-view > .data-page-header {
+    -fx-padding: 4px;
+    -fx-pref-height: 35px;
+    -fx-background-color: PAGE_HEADER_BORDER, PAGE_HEADER_BG;
+}
+
+.page-view > .page-header > .page-title,
+.data-page-view > .data-page-header > .page-title {
+    -fx-font-size: 16px;
+    -fx-padding: 3px 0px 0px 0px;
+}
+
+.page-view > .page-center,
+.data-page-view > .data-page-center {
+    -fx-background-color: PAGE_CENTER_BG;
+}
+
+.page-view > .dashboard-center {
+    -fx-background-color: PAGE_CENTER_BG;
+    -fx-padding: 50px, 10px, 50px, 10px;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Preview View                                                                *
+ *                                                                             *
+ ******************************************************************************/
+
+.preview-view > .preview-header {
+    -fx-padding: 4px;
+    -fx-pref-height: 35px;
+    -fx-background-color: PAGE_HEADER_BORDER, PAGE_HEADER_BG;
+    -fx-background-insets: 0, 1 0 1 0;
+}
+
+.preview-view > .preview-header > .preview-title {
+    -fx-font-size: 16px;
+    -fx-padding: 3px 0px 0px 0px;
+}
+
+.preview-view > .preview-center {
+    -fx-background-color: PAGE_CENTER_BG;
+    -fx-padding: 4px;
+    -fx-background-insets: 0, 0 0 0 0;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Form View                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.form-view {
+    -fx-background-color: RIBBON_BASE;
+    -fx-padding: 6px 0px 0px 0px;
+}
+
+.form-view > .form-center {
+    -fx-background-color: RIBBON_BRIGHT;
+}
+
+.form-pages > .tab-header-area > .tab-header-background {
+    -fx-background-color: -fx-outer-border, transparent, RIBBON_BRIGHT;
+    -fx-background-insets: 0, 0 0 1 0;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Splash                                                                      *
+ *                                                                             *
+ ******************************************************************************/
+
+.splash {
+    -fx-background-color: SPLASH_BG;
+}
+
+.splash-progress-bar > .bar {
+    -fx-background-color: SPLASH_COLOR;
+    -fx-background-insets: 1 1 2 1;
+    -fx-padding: 0.20em;
+}
+
+.splash-progress-text {
+    -fx-text-fill: SPLASH_COLOR;
+    -fx-alignment: center;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * BoxPane                                                                     *
+ *                                                                             *
+ ******************************************************************************/
+
+.box-pane {
+    -fx-background-color: #ffffff;
+    -fx-border-width: 3 1 1 1;
+    -fx-border-style: solid;
+    -fx-border-radius: 3;
+}
+
+.box-pane-gray {
+    -fx-border-color: #c1c1c1 transparent transparent transparent;
+}
+
+.box-pane-blue {
+    -fx-border-color: #3c8dbc #E9E9E9 #E9E9E9 #E9E9E9;
+}
+
+.box-pane-lightblue {
+    -fx-border-color: #00c0ef #E9E9E9 #E9E9E9 #E9E9E9;
+}
+
+.box-pane-red {
+    -fx-border-color: #f56954 #E9E9E9 #E9E9E9 #E9E9E9;
+}
+
+.box-pane-green {
+    -fx-border-color: #00a65a #E9E9E9 #E9E9E9 #E9E9E9;
+}
+
+.box-pane-orange {
+    -fx-border-color: #f39c12 #E9E9E9 #E9E9E9 #E9E9E9;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * StatusBar                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.status-bar {
+    -fx-padding: 4px;
+    -fx-pref-height: 30px;
+    -fx-background-color: STATUS_BAR_BORDER, STATUS_BAR_BG;
+    -fx-background-insets: 0, 1
+}
+
+.status-bar .left-items,
+.status-bar .right-items {
+    -fx-spacing: 30px;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ButtonBarPane                                                               *
+ *                                                                             *
+ ******************************************************************************/
+
+.button-bar-pane {
+    -fx-padding: 0 0 0 0;
+}
+
+.button-bar-pane > .tool-bar {
+    -fx-background-color: BUTTON_BAR_PANE_TOOLBAR;
+    -fx-padding: 3 3 0 5;
+    -fx-border-color: transparent, BUTTON_BAR_PANE_BORDER;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-style: solid;
+}
+
+.button-bar-pane > .tool-bar .button {
+    -fx-background-color: transparent;
+    -fx-text-fill: BUTTON_BAR_PANE_TEXT;
+}
+
+.button-bar-pane > .tool-bar .button:pressed {
+    -fx-background-color: BUTTON_BAR_PANE_SELECTED;
+    -fx-background-radius: 5 5 0 0;
+}
+
+.button-bar-pane > .tool-bar .button.selected {
+    -fx-background-color: BUTTON_BAR_PANE_SELECTED;
+    -fx-background-radius: 5 5 0 0;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Titled Separator                                                            *
+ *                                                                             *
+ ******************************************************************************/
+
+.titled-separator {
+    -fx-padding: 10 0 5 0;
+}
+
+.titled-separator *.label {
+    -fx-font-weight: bold;
+    -fx-padding: 0 4px 0 0;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Ribbon Pane                                                                 *
+ *                                                                             *
+ * Some ribbon css taken from https://github.com/dukke/FXRibbon                *
+ ******************************************************************************/
+
+.ribbon-pane {
+    -fx-tab-min-height: 25px;
+    -fx-tab-max-height: 25px;
+}
+
+.ribbon-pane > .tab-header-area {
+    -fx-padding: 0 0.166667em 0em 0.416667em; /* 0 2 5 5 */
+}
+
+.ribbon-pane > .tab-header-area > .headers-region > .tab {
+    -fx-background-color: transparent, transparent, RIBBON_BASE;
+    -fx-background-radius: 0 0 0 0, 0 0 0 0, 0 0 0 0;
+    -fx-padding: 0.083333em 1.25em 0.0769em 1.25em; /* 1 15 0.99 15 */
+}
+
+.ribbon-pane > .tab-header-area > .headers-region > .tab:selected {
+    -fx-background-color: transparent, RIBBON_BORDER, RIBBON_BRIGHT;
+    -fx-background-radius: 0 0 0 0, 0 0 0 0, 0 0 0 0;
+}
+
+.ribbon-pane  > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
+    -fx-text-fill: RIBBON_TAB_LABEL;
+    -fx-font-size: 1em; /* 16 */
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.ribbon-pane > .tab-header-area > .headers-region > .tab:selected > .tab-container > .tab-label {
+    -fx-text-fill: RIBBON_SELECTED_TAB_LABEL;
+}
+
+.ribbon-pane > .tab-header-area > .headers-region > .tab:hover > .tab-container > .tab-label {
+    -fx-text-fill: RIBBON_SELECTED_TAB_LABEL;
+}
+
+.ribbon-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: -fx-outer-border, transparent, RIBBON_BASE;
+    -fx-background-insets: 1 1 0 1, 0 0 1 0, 1;
+}
+
+.ribbon-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-width: 0, 0;
+    -fx-border-color: transparent, transparent;
+}
+
+.ribbon-pane > .tab-content-area {
+    -fx-background-color: RIBBON_BORDER, RIBBON_BRIGHT;
+    -fx-background-insets: 0, 0 0 1 0;
+}
+
+/* ribbon group */
+.ribbon-group {
+    -fx-padding: 4px 10px 4px 10px;
+}
+
+/* ribbon command */
+.ribbon-group .ribbon-command {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+
+    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 1em; /* 12 */
+    -fx-text-fill: RIBBON_COMMAND_TEXT;
+}
+
+.ribbon-group .ribbon-command:hover,
+.ribbon-group .ribbon-command:pressed {
+    -fx-background-color: RIBBON_COMMAND_SELECTED;
+    -fx-text-fill: RIBBON_COMMAND_SELECTED_TEXT;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Pager                                                                       *
+ *                                                                             *
+ ******************************************************************************/
+
+.pager-button {
+    -fx-min-height: 30px;
+    -fx-pref-height: 30px;
+    -fx-max-height: 30px;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * TipOfTheDay                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+
+.tip-of-the-day-border {
+    -fx-border-width: 1 1 1 1;
+    -fx-border-style: solid;
+    -fx-border-radius: 1;
+    -fx-border-color: TIP_OF_THE_DAY_BORDER;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Shortcuts                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.shortcuts-title {
+    -fx-font-size: 16px;
+}
+
+.shortcut-key {
+    -fx-padding: 2px 10px 2px 10px;
+    -fx-background-color: SHORTCUT_KEY_BG;
+    -fx-text-fill: #333333;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Theme toogle button                                                         *
+ *                                                                             *
+ ******************************************************************************/
+
+.theme-button:selected {
+    -fx-border-width: 2 2 2 2;
+    -fx-border-style: solid;
+    -fx-border-radius: 2;
+}
+
+.theme-button-gray {
+    -fx-background-color: #e9e9e9;
+}
+
+.theme-button-gray:selected {
+    -fx-border-color: #66afe9;
+}
+
+.theme-button-blue {
+    -fx-background-color: #1275c4;
+}
+
+.theme-button-blue:selected {
+    -fx-border-color: #66afe9;
+}
+
+.theme-button-green {
+    -fx-background-color: #277349;
+}
+
+.theme-button-green:selected {
+    -fx-border-color: #a0d4b7;
+}
+
+.theme-button-orange {
+    -fx-background-color: #b54830;
+}
+
+.theme-button-orange:selected {
+    -fx-border-color: #f3c6b1;
+}
+
+.theme-button-lila {
+    -fx-background-color: #7f3c7a;
+}
+
+.theme-button-lila:selected {
+    -fx-border-color: #9d5797;
+}
+
+.theme-button-dark {
+    -fx-background-color: #444444;
+}
+
+.theme-button-dark:selected {
+    -fx-border-color: #969696;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Validation                                                                  *
+ *                                                                             *
+ ******************************************************************************/
+
+.error {
+    -fx-effect: dropshadow(three-pass-box, darkred, 7, 0, 0, 0);
+}
+
+.warning {
+    -fx-effect: dropshadow(three-pass-box, gold, 14, 0, 0, 0);
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * TableView, ListView                                                         *
+ *                                                                             *
+ ******************************************************************************/
+
+.list-view:focused,
+.table-view:focused {
+    -fx-background-color: transparent,-fx-box-border,-fx-control-inner-background;
+    -fx-background-insets: -1.4, 0, 1;
+    -fx-background-radius: 1.4, 0, 0;
+    -fx-padding: 1;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Scroll Pane                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+
+.scroll-pane,
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Hyperlink                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.hyperlink,
+.hyperlink:hover,
+.hyperlink:hover:visited {
+    -fx-text-fill: HYPERLINK_COLOR;
+    -fx-border-color: transparent;
+}
+
+.hyperlink:armed,
+.hyperlink:visited,
+.hyperlink:hover:armed {
+    -fx-text-fill: HYPERLINK_COLOR;
+    -fx-border-color: transparent;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Tooltip                                                                     *
+ *                                                                             *
+ ******************************************************************************/
+
+.tooltip {
+    -fx-text-fill: TOOLTIP_COLOR;
+    -fx-background-color: TOOLTIP_BG;
+}
